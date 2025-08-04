@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+//import React, {useState} from "react";
 import {
     Pagina,
     Conteiner,
@@ -8,19 +8,12 @@ import {
     Botao0,
     Botao1
 } from "./Styles";
-import {Text, View} from "react-native";
+//import {Text, View} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Cadastro (){
 
     const navigation = useNavigation();
-    const {mutate: postUsuario, isPending} = useCreateUsuario({
-    onSuccess: (data) => {
-        toast.success("usuario cadastrado com sucesso");
-        navigate("/");
-},
-    onError: () => {
-        toast.error("usuário não cadastrado");
-    }});
 
     return ( 
         <Pagina> 
