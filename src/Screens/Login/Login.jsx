@@ -13,15 +13,25 @@ import {
 
 
 
-export default function Cadastro (){
-    
+function Login (){
+    const [email, setEmail]= useState("");
+    const [senha, setSenha]= useState("");
+
     const navigation = useNavigation();
     return ( 
         <Pagina> 
         <Conteiner>
             <Titulo>LOGIN</Titulo>
-            <Input {...register("email")} placeholder="Email"></Input>
-            <Input {...register("senha")} placeholder="senha"></Input>
+            <Input
+                 placeholder="Email"
+                 value={email}
+                 onChangeText={setEmail}
+            />
+            <Input  
+            placeholder="senha" 
+            value = {senha}
+            onChangeText= {setSenha}
+            />
             <Texto>Já possui uma conta? Clique </Texto>
             <Botao0 onPress = {() => navigation.navigate("Cadastro")}> aqui </Botao0>
             <Botao1>CRIAR CONTA</Botao1>
@@ -33,3 +43,5 @@ export default function Cadastro (){
 }
 
 /*navigation.navigate("AboutUs");*/
+
+export default Login;

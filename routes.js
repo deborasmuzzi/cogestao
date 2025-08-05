@@ -3,8 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AppLayout} from "./src/Layout/AppLayout";
 import useAuthStore from "./src/Stores/auth";
 
-import Login from "./src/Screens/Login";
-import Cadastro from "./src/Screens/Cadastro";
+import Login from "./src/Screens/Login/Login";
+import Cadastro from "./src/Screens/Cadastro/Cadastro"
 import Home from "./src/Screens/Home";
 
 const Stack = createNativeStackNavigator();

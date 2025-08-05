@@ -1,4 +1,4 @@
-//import React, {useState} from "react";
+import React, {useState} from "react";
 import {
     Pagina,
     Conteiner,
@@ -6,30 +6,67 @@ import {
     Input,
     Texto,
     Botao0,
-    Botao1
+    Botao1,
+    TextoBotao0,
+    TextoBotao1
 } from "./Styles";
 //import {Text, View} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Cadastro (){
+ function Cadastro (){
+   const navigation = useNavigation();
 
-    const navigation = useNavigation();
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [cargo, setCargo] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmaSenha, setConfirmaSenha] = useState("");
 
     return ( 
         <Pagina> 
         <Conteiner>
             <Titulo>CADASTRO</Titulo>
-            <Input {...register("nome")} placeholder="Nome"></Input>
-            <Input {...register("email")} placeholder="Email"></Input>
-            <Input {...register("cargo")} placeholder="Cargo"></Input>
-            <Input {...register("senha")} placeholder="senha"></Input>
-            <Input {...register("senha2")} placeholder="Confirme sua senha"></Input>
-            <Texto>Já possui uma conta? Clique </Texto>
-            <Botao0 onPress={() => navigation.navigate("Login")}> aqui </Botao0>
-            <Botao1>CRIAR CONTA</Botao1>
+     <Input
+              placeholder="Nome"
+              value={nome}
+              onChangeText={setNome}
+            />
+
+            <Input
+              placeholder="Email"
+              value={email}
+              onChangeText={setEmail}
+            />
+
+            <Input
+              placeholder="Cargo"
+              value={cargo}
+              onChangeText={setCargo}
+            />
+
+            <Input
+              placeholder="Senha"
+              value={senha}
+              onChangeText={setSenha}
+            />
+
+            <Input
+              placeholder="Confirme sua senha"
+              value={confirmaSenha}
+              onChangeText={setConfirmaSenha}
+            />
+            <Botao1>
+                <TextoBotao1>CRIAR CONTA</TextoBotao1>
+            </Botao1>
+            <Botao0 onPress={() => navigation.navigate("Login")}>
+            <Texto>Já possui uma conta? </Texto>  
+            <TextoBotao0>Faça o login </TextoBotao0>
+            </Botao0>
         </Conteiner>
         </Pagina>
 
 
     )
 }
+
+export default Cadastro;
