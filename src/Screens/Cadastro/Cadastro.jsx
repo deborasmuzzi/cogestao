@@ -60,7 +60,7 @@ import { useNavigation } from "@react-navigation/native";
             </Botao1>
             <Botao0 onPress={() => navigation.navigate("Login")}>
             <Texto>Já possui uma conta? </Texto>  
-            <TextoBotao0>Faça o login </TextoBotao0>
+            <TextoBotao0>Faça o login aqui. </TextoBotao0>
             </Botao0>
         </Conteiner>
         </Pagina>

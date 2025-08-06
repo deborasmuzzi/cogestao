@@ -38,7 +38,7 @@ export const Input = styled.TextInput`
 `
 
 export const Texto= styled.Text`
-        margin-top: 40px;
+        margin-top: 50px;
         color: white;
 
         font-size: 18px;
@@ -64,7 +64,8 @@ export const Botao0 = styled.TouchableOpacity`
         background-color: black;
         border: none;
         margin-left: 9px;
-        justify-content: flex-end;
+         flex-direction: row;
+        justify-content: center;
  `;
 
 export const Botao1 = styled.TouchableOpacity`
