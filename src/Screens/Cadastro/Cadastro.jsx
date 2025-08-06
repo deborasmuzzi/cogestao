@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import {useState} from "react";
 import {
     Pagina,
     Conteiner,
@@ -26,7 +26,7 @@ import { useNavigation } from "@react-navigation/native";
         <Pagina> 
         <Conteiner>
             <Titulo>CADASTRO</Titulo>
-     <Input
+            <Input
               placeholder="Nome"
               value={nome}
               onChangeText={setNome}
