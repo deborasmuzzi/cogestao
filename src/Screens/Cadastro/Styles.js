@@ -15,7 +15,7 @@ export const Titulo = styled.Text`
         //font-family: Montserrat, sans-serif;
         font-size: 40px;
         font-weight: bold;
-        color: white;
+        color: #ffd100;
         margin-top: 50px;
         margin-bottom: 30px;
 

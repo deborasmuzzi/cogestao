@@ -14,9 +14,10 @@ export const Conteiner = styled.View`
 
 export const Titulo = styled.Text`
 //font-family: Montserrat, sans-serif;
-font-size: 50px;
+font-size: 40px;
 font-weight: bold;
 color: #ffd100;
+margin-bottom: 10px;
 
 `
 
