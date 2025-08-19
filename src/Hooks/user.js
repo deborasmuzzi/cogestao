@@ -1,6 +1,6 @@
 import {useQuery, useMutation} from "@tanstack/react-query"
-import { CreateUsuario, DeleteUsuario, GetUsuarios, UpdateUsuario} from "../services/api/endpoints"
-import api from "../services/api/api"
+import { CreateUsuario, DeleteUsuario, GetUsuarios, UpdateUsuario} from "../Services/endpoints"
+import api from "../Services/api";
 
 export function useCreateUsuario({
     onSuccess = () => {}, 

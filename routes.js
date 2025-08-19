@@ -1,9 +1,10 @@
-import { NavigationContainer } from "@react-navigation/native";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import useAuthStore from "./src/Stores/auth";
+import useAuthStore from "./src/Store/Auth";
 
 import Login from "./src/Screens/Login/Login";
 import Cadastro from "./src/Screens/Cadastro/Cadastro"
+import Home from "./src/Screens/Home/Home";
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,17 @@ export default function Routes() {
         {/* Rotas públicas */}
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
+        {/*rotas privadas */}
+          <Stack.Screen
+          name="Home"
+          children={() => (
+            <PrivateRoute>
+                <Home />
+            </PrivateRoute>
+          )}
+        />
       </Stack.Navigator>
+
+      
   );
 }

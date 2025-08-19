@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { useNavigation } from "@react-navigation/native";
-
+import  useAuthStore from "../../Store/Auth"
+import api from "../../Services/api";
 import {
     Pagina,
     Conteiner,
@@ -16,10 +17,33 @@ import {
 
 
 function Login (){
+     const navigation = useNavigation();
     const [email, setEmail]= useState("");
     const [senha, setSenha]= useState("");
 
-    const navigation = useNavigation();
+    const [carregando, setCarregando]= useState(false);
+    const setToken = useAuthStore((state) => state.setToken);
+
+
+    const handleSubmit = async (e) => {
+
+    try {
+        setCarregando(true);
+       const res = await api.post("/", {email, senha});
+        const {token} = res.data;
+        
+        setToken(token);
+        navigation.navigate("Home");
+      
+    } catch (erro) {
+        console.error(erro);
+        alert(erro.response.data.message);
+    } finally{
+        setCarregando(false);
+    }
+}
+
+   
     return ( 
         <Pagina> 
         <Conteiner>
@@ -35,7 +59,7 @@ function Login (){
             onChangeText= {setSenha}
             />
 
-            <Botao1>
+            <Botao1 onPress={handleSubmit}  disabled={carregando}>
                 <TextoBotao1>
                     ENTRAR
                 </TextoBotao1>
@@ -55,6 +79,6 @@ function Login (){
     )
 }
 
-/*navigation.navigate("AboutUs");*/
+
 
 export default Login;
